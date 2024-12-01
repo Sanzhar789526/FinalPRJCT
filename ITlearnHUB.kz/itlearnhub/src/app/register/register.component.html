@@ -1,0 +1,29 @@
+<div class="register-container">
+    <h2>Registration Page</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="email">Email:</label>
+        <input id="email" type="email" formControlName="email" />
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input id="password" type="password" formControlName="password" />
+      </div>
+      <div>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input id="confirmPassword" type="password" formControlName="confirmPassword" />
+      </div>
+      <div class="forgot-password">
+        <a href="/forgot-password">Forgot password?</a>
+      </div>
+      <button type="submit" class="register-btn">Register</button>
+    </form>
+  
+    <div class="login-options">
+      <p>Or login with:</p>
+      <button class="google-btn">Login with Google</button>
+      <button class="facebook-btn">Login with Facebook</button>
+      <button class="twitter-btn">Login with Twitter</button>
+    </div>
+  </div>
+  

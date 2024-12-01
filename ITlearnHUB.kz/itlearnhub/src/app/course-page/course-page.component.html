@@ -1,0 +1,46 @@
+<!-- course.component.html -->
+<div class="course-page">
+    <!-- Название и описание курса -->
+    <section class="course-header">
+      <h1>{{ course.title }}</h1>
+      <p class="course-description">{{ course.description }}</p>
+      <button class="btn-enroll">Enroll in Course</button>
+    </section>
+  
+    <!-- Информация о преподавателе -->
+    <section class="instructor-info">
+      <h2>Instructor</h2>
+      <div class="instructor">
+        <img [src]="course.instructor.avatar" alt="Instructor Avatar" class="instructor-avatar">
+        <div class="instructor-details">
+          <h3>{{ course.instructor.name }}</h3>
+          <p>{{ course.instructor.bio }}</p>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Содержание курса -->
+    <section class="course-content">
+      <h2>Course Content</h2>
+      <ul class="module-list">
+        <li *ngFor="let module of course.modules">
+          <h3>{{ module.title }}</h3>
+          <ul class="lesson-list">
+            <li *ngFor="let lesson of module.lessons">
+              {{ lesson }}
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  
+    <!-- Отзывы студентов -->
+    <section class="student-reviews">
+      <h2>Student Reviews</h2>
+      <div class="review" *ngFor="let review of course.reviews">
+        <p>"{{ review.content }}"</p>
+        <span>- {{ review.author }}</span>
+      </div>
+    </section>
+  </div>
+  

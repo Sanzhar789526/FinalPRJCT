@@ -1,0 +1,51 @@
+<div class="teacher-dashboard">
+    <h1>Teacher Dashboard</h1>
+  
+    <!-- Статистика -->
+    <section class="statistics">
+      <h2>Course Statistics</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Total Students</h3>
+          <p>{{ totalStudents }}</p>
+        </div>
+        <div class="stat-card">
+          <h3>Active Courses</h3>
+          <p>{{ activeCourses }}</p>
+        </div>
+        <div class="stat-card">
+          <h3>Completed Courses</h3>
+          <p>{{ completedCourses }}</p>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Управление студентами -->
+    <section class="students">
+      <h2>Manage Students</h2>
+      <div class="students-list">
+        <div *ngFor="let student of pendingStudents" class="student-card">
+          <p><strong>{{ student.name }}</strong> wants to join <em>{{ student.course }}</em></p>
+          <button (click)="acceptStudent(student)">Accept</button>
+          <button (click)="rejectStudent(student)">Reject</button>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Расписание видеотрансляций -->
+    <section class="schedule">
+      <h2>Live Session Schedule</h2>
+      <div class="schedule-list">
+        <div *ngFor="let session of liveSessions" class="session-card">
+          <p><strong>{{ session.title }}</strong></p>
+          <p>Course: {{ session.course }}</p>
+          <p>Date: {{ session.date | date }}</p>
+          <p>Time: {{ session.time }}</p>
+          <button (click)="editSession(session)">Edit</button>
+          <button (click)="deleteSession(session)">Delete</button>
+        </div>
+      </div>
+      <button class="btn-primary" (click)="createNewSession()">Add New Session</button>
+    </section>
+  </div>
+  

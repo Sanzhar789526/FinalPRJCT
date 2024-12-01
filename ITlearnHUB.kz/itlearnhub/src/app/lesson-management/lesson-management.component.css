@@ -1,0 +1,152 @@
+/* Основные стили для всей страницы */
+.header-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Размещает элементы по краям */
+  padding: 10px 0; /* Добавляет немного отступов */
+}
+
+.header-section h1 {
+  margin: 0; /* Убирает отступы у заголовка */
+}
+
+.header-section .btn-secondary {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+}
+
+.header-section .btn-secondary:hover {
+  background-color: #0056b3; /* Цвет при наведении */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+}
+
+.main-content {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-content h1 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Секция фильтрации и поиска */
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.search-bar input[type="text"] {
+  border: none;
+  padding: 8px 12px;
+  outline: none;
+  font-size: 1em;
+  width: 200px;
+}
+
+.filters, .sort-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-dropdown {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.courses-list {
+  display: flex;
+  flex-wrap: wrap; /* Позволяет переносить карточки на следующую строку */
+  gap: 16px; /* Отступы между карточками */
+  justify-content: center; /* Центрирование карточек */
+  padding: 16px;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column; /* Содержимое карточки располагается вертикально */
+  align-items: center; /* Центрируем содержимое */
+  width: 20%; /* Фиксированная ширина карточки */
+  background-color: #fff; /* Белый фон карточки */
+  border: 1px solid #ddd; /* Легкая граница */
+  border-radius: 8px; /* Закругленные углы */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  padding: 16px;
+  text-align: center; /* Текст в центре */
+}
+
+.course-card img {
+  width: 100%; /* Изображение занимает всю ширину карточки */
+  height: auto; /* Пропорциональная высота */
+  border-radius: 8px 8px 0 0; /* Закругленные углы сверху */
+}
+
+.course-info {
+  margin-top: 12px;
+}
+
+.course-info h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.course-info p {
+  font-size: 14px;
+  color: #666;
+  margin: 8px 0;
+}
+
+.course-meta {
+  font-size: 12px;
+  color: #888;
+  margin: 8px 0;
+}
+
+.btn-secondary {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: #007bff; /* Синий фон кнопки */
+  color: #fff; /* Белый текст */
+  border: none; /* Без границы */
+  border-radius: 4px; /* Закругленные углы кнопки */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #0056b3; /* Более тёмный синий при наведении */
+}

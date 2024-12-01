@@ -1,0 +1,55 @@
+<form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+  <h2>Курс</h2>
+  
+  
+
+  <div formArrayName="modules">
+    <div *ngFor="let module of modules.controls; let i = index" [formGroupName]="i">
+      <h3>Модуль {{ i + 1 }}</h3>
+      
+      <button type="button" (click)="removeModule(i)">Удалить модуль</button>
+
+      <div formArrayName="content">
+        <div *ngFor="let contentItem of getContent(i)?.controls; let j = index" [formGroupName]="j">
+          <div [ngSwitch]="contentItem?.get('type')?.value">
+            <!-- Материалы -->
+            <div *ngSwitchCase="'material'">
+              <h4>Материал</h4>
+              <input formControlName="title" placeholder="Название">
+              <textarea formControlName="text" placeholder="Текст"></textarea>
+            </div>
+
+            <!-- Видео -->
+            <div *ngSwitchCase="'video'">
+              <h4>Видео</h4>
+              <input formControlName="title" placeholder="Название">
+              <input formControlName="link" placeholder="Ссылка на видео">
+            </div>
+
+            <!-- Тест -->
+            <div *ngSwitchCase="'test'">
+              <h4>Тест</h4>
+              <input formControlName="question" placeholder="Вопрос">
+              <div formArrayName="answers">
+                <div *ngFor="let answer of getAnswers(i, j)?.controls; let k = index" [formGroupName]="k">
+                  <input formControlName="text" placeholder="Ответ">
+                  <input type="checkbox" formControlName="isCorrect"> Правильный
+                  <button type="button" (click)="removeAnswer(i, j, k)">Удалить ответ</button>
+                </div>
+                <button type="button" (click)="addAnswer(i, j)">Добавить ответ</button>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" (click)="removeContent(i, j)">Удалить контент</button>
+        </div>
+
+        <button type="button" (click)="addMaterial(i)">Добавить материал</button>
+        <button type="button" (click)="addVideo(i)">Добавить видео</button>
+        <button type="button" (click)="addTest(i)">Добавить тест</button>
+      </div>
+    </div>
+  </div>
+  <button type="button" (click)="addModule()">Добавить модуль</button>
+  <button type="submit">Сохранить курс</button>
+</form>

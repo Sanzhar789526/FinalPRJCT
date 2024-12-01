@@ -1,0 +1,49 @@
+<div *ngIf="course">
+    <h1>{{ course.title }}</h1>
+  
+    <div *ngFor="let module of course.modules; let i = index" class="module">
+      <h2>Модуль {{ i + 1 }}: {{ module.title }}</h2>
+  
+      <div *ngFor="let content of module.content" class="content-item">
+        <ng-container [ngSwitch]="content.type">
+          
+          <!-- Материал -->
+          <div *ngSwitchCase="'material'" class="material">
+            <h3>{{ content.title }}</h3>
+            <p>{{ content.text }}</p>
+          </div>
+  
+          <!-- Видео -->
+          <div *ngSwitchCase="'video'" class="video">
+            <h3>{{ content.title }}</h3>
+            <iframe *ngIf="content.link" [src]="content.link | safeUrl" width="560" height="315"></iframe>
+          </div>
+  
+          <!-- Тест -->
+          <div *ngSwitchCase="'test'" class="test">
+            <h3>Тест: {{ content.question }}</h3>
+            <form [formGroup]="testForms[i]" (ngSubmit)="submitTest(i, content)">
+              <div *ngFor="let answer of content.answers; let j = index">
+                <label>
+                  <input
+                    type="checkbox"
+                    formControlName="{{ 'answer_' + j }}"
+                  />
+                  {{ answer.text }}
+                </label>
+              </div>
+              <button type="submit">Отправить ответ</button>
+            </form>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  
+    <div class="results" *ngIf="results.length > 0">
+      <h2>Результаты тестов:</h2>
+      <div *ngFor="let result of results; let k = index">
+        <p>Тест {{ k + 1 }}: {{ result.correct ? 'Пройден' : 'Не пройден' }}</p>
+      </div>
+    </div>
+  </div>
+  

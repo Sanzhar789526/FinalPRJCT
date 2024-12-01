@@ -1,0 +1,68 @@
+<div class="header">
+  <!-- Логотип сайта -->
+  <div class="logo">
+    <img src="\assets\image.png" alt="Site Logo" class="logo-icon">
+    <a routerLink="/"><span class="logo-text">ItLearnHub</span></a>
+  </div>
+
+  <!-- Ссылки и профиль -->
+  <div class="right-section">
+    <!-- Профиль пользователя -->
+    <a *ngIf="!authService.isVisitor()" [routerLink]="authService.isTeacher() ? '/teacher' : '/student'">
+      <div class="user-profile">
+        <img src="https://via.placeholder.com/150" alt="User Avatar" class="user-avatar">
+        <span class="user-name">
+          {{ authService.isTeacher() ? 'Teacher' : 'Student' }}
+        </span>
+      </div>
+    </a>
+
+    <!-- Ссылки на обучение -->
+    <nav class="nav-links">
+      <a *ngIf="authService.isStudent()" routerLink="/student-courses">My Courses</a>
+      <a *ngIf="authService.isStudent()" routerLink="/progress">Progress</a>
+      <a *ngIf="authService.isTeacher()" routerLink="/teacher-lessons">My Courses</a>
+    </nav>
+
+    <!-- Кнопка входа/выхода -->
+    <div class="auth-action">
+      <a *ngIf="authService.isVisitor()" routerLink="/register" class="auth-button">Login</a>
+      <a *ngIf="!authService.isVisitor()" routerLink="/register" >Logout</a>
+    </div>
+  </div>
+</div>
+
+
+  
+
+
+  <nav *ngIf="showNavbar">
+    <!-- Код вашего navbar -->
+  </nav>
+
+  <div>
+    <h1>Welcome, {{ user?.name }}</h1>
+    <button (click)="switchToVisitor()">Switch to Visitor</button>
+    <button (click)="switchToStudent()">Switch to Student</button>
+    <button (click)="switchToTeacher()">Switch to Teacher</button>
+  </div>
+  
+  <ng-container *ngIf="authService.isVisitor(); else loggedInView">
+    Visitor
+  </ng-container>
+  
+  <ng-template #loggedInView>
+    <ng-container *ngIf="authService.isStudent(); else teacherView">
+      Student
+    </ng-container>
+  </ng-template>
+  
+  <ng-template #teacherView>
+    Teacher
+  </ng-template>
+  
+  
+  
+<router-outlet />
+
+

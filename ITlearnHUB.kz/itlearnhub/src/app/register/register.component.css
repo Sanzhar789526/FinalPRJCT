@@ -1,0 +1,108 @@
+.register-container {
+    max-width: 400px;
+    margin: 100px auto; /* Увеличьте значение margin-top для смещения формы вниз */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .register-container h2 {
+    text-align: center;
+  }
+  
+  .register-container form div {
+    margin-bottom: 15px;
+  }
+  
+  .register-container form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .register-container form input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .forgot-password {
+    text-align: right;
+    margin-bottom: 15px;
+  }
+  
+  .forgot-password a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9em;
+  }
+  
+  .forgot-password a:hover {
+    text-decoration: underline;
+  }
+  
+  .register-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #28a745; /* Зеленый цвет */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .register-btn:hover {
+    background-color: #218838;
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.4);
+  }
+  
+  .login-options {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .login-options p {
+    margin-bottom: 10px;
+  }
+  
+  .google-btn, .facebook-btn, .twitter-btn {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .google-btn {
+    background-color: #de5246;
+  }
+  
+  .facebook-btn {
+    background-color: #3b5998;
+  }
+  
+  .twitter-btn {
+    background-color: #1da1f2;
+  }
+  
+  .google-btn:hover {
+    background-color: #c74338;
+  }
+  
+  .facebook-btn:hover {
+    background-color: #2d4373;
+  }
+  
+  .twitter-btn:hover {
+    background-color: #1991da;
+  }
+  

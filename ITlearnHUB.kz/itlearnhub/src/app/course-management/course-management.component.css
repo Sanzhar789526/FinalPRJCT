@@ -1,0 +1,123 @@
+/* Общие стили для формы */
+form {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+/* Стили для заголовков */
+form h2, form h3, form h4 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+form h3 {
+  font-size: 1.4rem;
+}
+
+form h4 {
+  font-size: 1.2rem;
+}
+
+/* Стили для полей ввода */
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* Стили для текста в input */
+input[type="text"]::placeholder,
+textarea::placeholder {
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+/* Стили для текста в textarea */
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+/* Стили для кнопок */
+button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Стили для кнопок в ряду */
+button.inline-button {
+  display: inline-block;
+  margin: 0 10px 10px 0;
+}
+
+/* Ошибки валидации */
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+/* Стили для кнопок "Добавить" */
+button.add-button {
+  background-color: #28a745;
+}
+
+button.add-button:hover {
+  background-color: #218838;
+}
+
+/* Расстояние между кнопками */
+button:not(:last-child) {
+  margin-right: 10px;
+}
+
+/* Модули */
+.module-container {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  form {
+    padding: 15px;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  input[type="text"],
+  textarea,
+  select {
+    font-size: 0.95rem;
+  }
+}

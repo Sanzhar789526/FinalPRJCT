@@ -1,0 +1,48 @@
+{
+    "modules": [
+      {
+        "title": "Модуль 1",
+        "content": [
+          {
+            "type": "material",
+            "title": "Введение в курс",
+            "text": "Описание и цели курса."
+          },
+          {
+            "type": "video",
+            "title": "Видео-урок 1",
+            "link": "https://example.com/video1"
+          },
+          {
+            "type": "test",
+            "question": "Что такое Angular?",
+            "answers": [
+              { "text": "Фреймворк JavaScript", "isCorrect": true },
+              { "text": "Язык программирования", "isCorrect": false },
+              { "text": "База данных", "isCorrect": false }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Модуль 2",
+        "content": [
+          {
+            "type": "material",
+            "title": "Продвинутые темы",
+            "text": "Подробное изучение компонентов и модулей."
+          },
+          {
+            "type": "test",
+            "question": "Какой декоратор используется для создания компонента?",
+            "answers": [
+              { "text": "@Component", "isCorrect": true },
+              { "text": "@NgModule", "isCorrect": false },
+              { "text": "@Injectable", "isCorrect": false }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
