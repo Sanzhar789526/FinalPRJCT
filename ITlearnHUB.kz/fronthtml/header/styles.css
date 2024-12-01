@@ -1,0 +1,113 @@
+/* Основной стиль для header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Стилистика для логотипа */
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .logo-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Стиль для строки поиска */
+  .search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .search-bar input[type="text"] {
+    border: none;
+    padding: 8px 12px;
+    outline: none;
+    font-size: 1em;
+    width: 200px;
+  }
+  
+  .search-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .search-btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Стили для фильтров */
+  .filters {
+    margin-left: 20px;
+  }
+  
+  .filter-dropdown {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
+  /* Стилистика для ссылок на обучение */
+  .nav-links {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
+  }
+  
+  .nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px;
+    transition: color 0.2s;
+  }
+  
+  .nav-links a:hover {
+    color: #4CAF50;
+  }
+  
+  /* Стиль для профиля пользователя */
+  .user-profile {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+  }
+  
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .user-name {
+    font-size: 1em;
+    color: #333;
+    font-weight: 500;
+  }
+  
