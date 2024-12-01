@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ course.title }}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h1>{{ course.title }}</h1>
+    <p><strong>Описание:</strong> {{ course.description }}</p>
+
+    <h2>Уроки</h2>
+    {% if lessons %}
+      <ul>
+        {% for lesson in lessons %}
+          <li>
+            <h3>{{ lesson.title }}</h3>
+            <p>{{ lesson.description }}</p>
+            {% if lesson.video_url %}
+              <a href="{{ lesson.video_url }}" target="_blank">Смотреть видео</a>
+            {% else %}
+              <p>Видео для этого урока отсутствует.</p>
+            {% endif %}
+            <p><strong>Раздел:</strong> {{ lesson.section }}</p>
+
+            {% if lesson.tests.all %}
+              <h4>Тесты</h4>
+              <ul>
+                {% for test in lesson.tests.all %}
+                  <li>
+                    <a href="{% url 'take_test' test.id %}">Пройти тест: {{ test.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <p>Тесты для этого урока отсутствуют.</p>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Уроки пока недоступны.</p>
+    {% endif %}
+    <a href="{% url 'my_enrolled_courses' %}" class="button">Вернуться к моим курсам</a>
+  </div>
+</body>
+</html>
