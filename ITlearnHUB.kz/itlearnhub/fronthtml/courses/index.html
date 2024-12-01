@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="styles.css"> <!-- Подключаем CSS файл -->
+
+<!-- catalog.component.html -->
+<div class="main-content">
+    <h1>Course Catalog</h1>
+  
+    <!-- Форма поиска и фильтры -->
+    <section class="filter-section">
+      <!-- Строка поиска -->
+      <div class="search-bar">
+        <input type="text" placeholder="Search for courses..." [(ngModel)]="searchTerm">
+      </div>
+  
+      <!-- Фильтры -->
+      <div class="filters">
+        <!-- Категория -->
+        <label for="category">Category:</label>
+        <select id="category" class="filter-dropdown" [(ngModel)]="selectedCategory">
+          <option value="">All Categories</option>
+          <option value="development">Development</option>
+          <option value="design">Design</option>
+          <option value="business">Business</option>
+        </select>
+  
+        <!-- Уровень сложности -->
+        <label for="level">Level:</label>
+        <select id="level" class="filter-dropdown" [(ngModel)]="selectedLevel">
+          <option value="">All Levels</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+  
+        <!-- Длительность курса -->
+        <label for="duration">Duration:</label>
+        <select id="duration" class="filter-dropdown" [(ngModel)]="selectedDuration">
+          <option value="">Any Duration</option>
+          <option value="short">0-5 hours</option>
+          <option value="medium">5-10 hours</option>
+          <option value="long">10+ hours</option>
+        </select>
+      </div>
+  
+      <!-- Сортировка -->
+      <div class="sort-section">
+        <label for="sort">Sort by:</label>
+        <select id="sort" class="filter-dropdown" [(ngModel)]="selectedSort">
+          <option value="date">Date Added</option>
+          <option value="popularity">Popularity</option>
+          <option value="rating">Rating</option>
+        </select>
+      </div>
+    </section>
+  
+    <!-- Список курсов -->
+    <section class="courses-list">
+      <div class="course-card" *ngFor="let course of filteredCourses">
+        <img [src]="course.image" alt="Course Image" class="course-image">
+        <div class="course-info">
+          <h3>{{ course.title }}</h3>
+          <p>{{ course.description }}</p>
+          <span class="course-meta">
+            Category: {{ course.category }} | Level: {{ course.level }} | Duration: {{ course.duration }}
+          </span>
+          <button class="btn-secondary">Enroll Now</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  

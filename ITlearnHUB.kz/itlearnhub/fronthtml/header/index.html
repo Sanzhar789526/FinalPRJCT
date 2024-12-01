@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="styles.css"> <!-- Подключаем CSS файл -->
+<!-- header.component.html -->
+<div class="header">
+    <!-- Логотип сайта -->
+    <div class="logo">
+      <img src="assets/logo.png" alt="Site Logo" class="logo-icon"> <!-- Замените "assets/logo.png" на путь к вашему логотипу -->
+      <span class="logo-text">MyEdu</span>
+    </div>
+  
+    <!-- Строка поиска -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search for courses..." [(ngModel)]="searchTerm">
+      <button class="search-btn">🔍</button>
+    </div>
+  
+    <!-- Фильтры -->
+    <div class="filters">
+      <label for="category">Category:</label>
+      <select id="category" [(ngModel)]="selectedCategory" class="filter-dropdown">
+        <option value="">All Categories</option>
+        <option value="development">Development</option>
+        <option value="design">Design</option>
+        <option value="business">Business</option>
+      </select>
+    </div>
+  
+    <!-- Ссылки на обучение -->
+    <nav class="nav-links">
+      <a routerLink="/my-courses">My Courses</a>
+      <a routerLink="/progress">Progress</a>
+    </nav>
+  
+    <!-- Профиль пользователя -->
+    <div class="user-profile">
+      <img src="assets/user-avatar.png" alt="User Avatar" class="user-avatar"> <!-- Замените "assets/user-avatar.png" на путь к вашему аватару -->
+      <span class="user-name">John Doe</span>
+    </div>
+  </div>
+  

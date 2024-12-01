@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="styles.css"> <!-- Подключаем CSS файл -->
+
+<!-- Название курса и краткое описание остаются прежними -->
+<div class="course-page">
+    <section class="course-header">
+      <h1>{{ course.title }}</h1>
+      <p class="course-description">{{ course.description }}</p>
+      <button class="btn-enroll">Enroll in Course</button>
+    </section>
+  
+    <!-- Список уроков с прогрессом -->
+    <section class="lesson-list">
+      <h2>Lessons</h2>
+      <ul>
+        <li *ngFor="let lesson of course.modules[currentModuleIndex].lessons; let i = index">
+          <div class="lesson-item">
+            <span>{{ lesson.title }}</span>
+            <button (click)="startLesson(i)">Start Lesson</button>
+            <span *ngIf="lesson.completed">(Completed)</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+  
+    <!-- Урок (плеер видео или содержимое урока) -->
+    <section class="lesson-content" *ngIf="currentLesson">
+      <h2>{{ currentLesson.title }}</h2>
+      <p>{{ currentLesson.content }}</p>
+      <button (click)="markCompleted()">Mark as Completed</button>
+    </section>
+  
+    <!-- Секция вопросов и ответов -->
+    <section class="questions-section">
+      <h2>Questions & Answers</h2>
+      <div *ngFor="let question of questions">
+        <p><strong>{{ question.user }}:</strong> {{ question.content }}</p>
+        <ul>
+          <li *ngFor="let answer of question.answers">
+            <strong>{{ answer.user }}:</strong> {{ answer.content }}
+          </li>
+        </ul>
+      </div>
+  
+      <input type="text" [(ngModel)]="newQuestion" placeholder="Ask a question...">
+      <button (click)="addQuestion()">Post Question</button>
+    </section>
+  
+    <!-- Секция комментариев -->
+    <section class="comments-section">
+      <h2>Comments</h2>
+      <div *ngFor="let comment of comments">
+        <p><strong>{{ comment.user }}:</strong> {{ comment.content }}</p>
+      </div>
+  
+      <input type="text" [(ngModel)]="newComment" placeholder="Write a comment...">
+      <button (click)="addComment()">Post Comment</button>
+    </section>
+  </div>
+  

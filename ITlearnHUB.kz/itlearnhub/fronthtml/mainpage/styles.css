@@ -1,0 +1,126 @@
+/* Основные стили для всей страницы */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+  }
+  
+  /* Стили для основного контента */
+  .main-content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Приветственная секция */
+  .welcome-section {
+    text-align: center;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .welcome-section h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .welcome-section p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .btn-primary {
+    padding: 12px 20px;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #45a049;
+  }
+  
+  /* Стили для секций курсов */
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .section h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .courses-grid {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .course-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .course-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .course-card h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .course-card p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .btn-secondary {
+    padding: 8px 16px;
+    font-size: 0.9em;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Стили для обновлений */
+  .updates-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .updates-section li {
+    font-size: 1em;
+    color: #555;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .updates-section li:last-child {
+    border-bottom: none;
+  }
+  

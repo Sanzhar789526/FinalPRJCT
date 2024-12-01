@@ -1,0 +1,126 @@
+/* Основные стили для всей страницы */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+  }
+  
+  .main-content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .main-content h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Секция фильтрации и поиска */
+  .filter-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .search-bar input[type="text"] {
+    border: none;
+    padding: 8px 12px;
+    outline: none;
+    font-size: 1em;
+    width: 200px;
+  }
+  
+  .filters, .sort-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .filter-dropdown {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
+  /* Список курсов */
+  .courses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Карточки курсов */
+  .course-card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .course-card img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px 0 0 10px;
+  }
+  
+  .course-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .course-info h3 {
+    font-size: 1.4em;
+    color: #333;
+    margin: 0;
+  }
+  
+  .course-info p {
+    font-size: 1em;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .course-meta {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 15px;
+  }
+  
+  .btn-secondary {
+    padding: 8px 16px;
+    font-size: 0.9em;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #0056b3;
+  }
+  
